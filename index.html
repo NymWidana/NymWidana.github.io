@@ -3,10 +3,174 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World!</title>
+    <meta
+      name="description"
+      content="Modern personal portfolio and landing page template for GitHub Pages."
+    />
+    <title>Widana | Web Dev</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <h2>My Name is Widana</h2>
+    <div class="topbar">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home" class="brand" aria-label="Widana home">
+          <span>WIDANA</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+        </div>
+      </nav>
+    </div>
+
+    <main id="home" class="page-shell">
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <h1>HI! <span class="gradient-text">I'm Widana</span></h1>
+          <p>
+            I like building things step by step learning by doing, exploring new
+            ideas, and turning them into projects that matter. Curious,
+            practical, and always coding with purpose.
+          </p>
+
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-secondary">Let's talk</a>
+          </div>
+        </div>
+
+        <div class="visual-panel reveal" aria-label="Profile card illustration">
+          <div class="orb one"></div>
+          <div class="orb two"></div>
+
+          <div class="profile-card">
+            <div
+              class="avatar"
+              role="img"
+              aria-label="Abstract portrait illustration"
+            ></div>
+          </div>
+
+          <div class="floating-badge">
+            <strong>Web Dev</strong>
+            <span>Designs to Codes</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal">
+        <div class="section-header">
+          <h2>Curious Dev on a Learning Journey.</h2>
+          <p>
+            I enjoy learning by building things step by step. Most of my
+            projects come from curiosity and a drive to make something useful.
+            I'm not chasing perfection, just trying to create, explore, and
+            share along the way.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <!-- <div class="icon-box"></div> -->
+            <h3>I like building stuff</h3>
+            <p>
+              I enjoy making things that actually work, not just theory. Hands
+              on projects are my way of learning.
+            </p>
+          </article>
+
+          <article class="card">
+            <!-- <div class="icon-box"></div> -->
+            <h3>I'm curious</h3>
+            <p>
+              I ask questions, explore new tools, and check out different ideas
+              even if I don't go super deep, I like knowing what's possible.
+            </p>
+          </article>
+
+          <article class="card">
+            <!-- <div class="icon-box"></div> -->
+            <h3>I code with a purpose</h3>
+            <p>
+              Most of what I do connects to something meaningful. teaching,
+              guiding, or creating projects that matter.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="journey" class="section reveal">
+        <div class="section-header">
+          <h2>Selected highlights.</h2>
+          <p>
+            I care about the things that make web be usefull, fast and secure
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h3>Backend Basic</h3>
+              <p>
+                Created websites with basic backend functionality such as CRUD,
+                Auth, Pagination, etc via vanila PHP and then started learning
+                MVC software design arcitecture while learning Laravel framework
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h3>Front End Web Dev using Framework</h3>
+              <p>
+                Started learning translating design to Vue JS framework codes
+                for static Front End only Website.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-content">
+              <h3>Introduction to Web Development</h3>
+              <p>
+                Started learning bare basic of websites such as HTML, CSS, JS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta-banner reveal">
+        <div>
+          <h3>Let's build something memorable.</h3>
+          <p>Available for thoughtful collaborations.</p>
+        </div>
+        <a href="mailto:widan0001@gmail.com" class="btn btn-primary"
+          >widan0001@gmail.com</a
+        >
+      </section>
+
+    </main>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    </script>
   </body>
 </html>
